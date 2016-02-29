@@ -13,6 +13,8 @@ app.use( bodyParser.json() );
 
 app.post('/collection', function(req, res) {
   var sr = new SlackRequest(req.body);
+  console.dir(sr);
+  console.log('######');
   var requestedBGGUser = sr.getBGGUserInText();
   // Make sure we have a username before pinging BGG
   if (!requestedBGGUser) {

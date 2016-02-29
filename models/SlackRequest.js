@@ -1,5 +1,6 @@
 function SlackRequest(body) {
   "use strict";
+  console.dir(body);
 
   this.token = body.token;
   this.teamId = body.team_id;
@@ -23,7 +24,12 @@ function SlackRequest(body) {
   SlackRequest.prototype.getText = function() { return this.text };
   SlackRequest.prototype.getResponseUrl = function() { return this.responseUrl };
 
-  SlackRequest.prototype.getBGGUserInText = function() { return this.text.split(" ")[0] };
+  SlackRequest.prototype.getBGGUserInText = function() {
+    var text = this.text ?
+      this.text.split(' ')[0] :
+      '';
+    return text;
+  }
 }
 
 module.exports = SlackRequest;
