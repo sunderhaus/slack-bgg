@@ -4,14 +4,19 @@ var _ = require('lodash');
 
 module.exports = function formatCollectionForSlackResponse(collection) {
   var data = {};
-  var attachments = [];
+  var titles = [];
+  var index = 1;
 
-  data.text = "Here are the titles " + collection.username + " owns:";
+  data.text = "*" + collection.username + "* owns " + collection.gameTitles.length + " items:";
 
   _.each(collection.gameTitles, function(gameTitle) {
-    attachments.push({text: gameTitle});
+    titles.push(index.toString() + ". " + gameTitle);
+    index++;
   });
-  data.attachments = attachments;
+  data.attachments = { 
+    text: titles.join('\n')
+    mrkdwn_in: ["text"]
+  };
 
   return data;
 }
