@@ -1,0 +1,4 @@
+# slack-bgg
+This is a Board Game Geek slash command integration for Slack. It makes use of the bgg module from [monteslu](http://github.com/monteslu) and the Slack API. Currently, it only supports returning the Board Game Geek collection results of a username provided as the first argument of a slash command. These results contain the game titles for things in a collection marked as "Owned".
+
+The application runs an express server on port 3000 and accepts post requests with an application/json mime-type formatted body. Check the [Slack documentation](https://api.slack.com/slash-commands) for more information on what to expect.
