@@ -9,11 +9,11 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var SC_COLLECTION_TOKEN = process.env.SC_COLLECTION_TOKEN || undefined;
 
-app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 
 app.post('/collection', function(req, res) {
   var sr = new SlackRequest(req.body);
-  console.dir(req.body.command);
   var requestedBGGUser = sr.getBGGUserInText();
   // Make sure we have a username before pinging BGG
   if (!requestedBGGUser) {
