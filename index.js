@@ -1,6 +1,5 @@
 var bgg = require('bgg')();
 var express = require('express');
-var _ = require('lodash');
 var bodyParser = require('body-parser');
 var formatCollectionForSlackResponse = require('./utils/formatCollectionForSlackResponse');
 var SlackRequest = require('./models/SlackRequest');
