@@ -7,7 +7,7 @@ var SlackRequest = require('./models/SlackRequest');
 var Collection = require('./models/Collection');
 
 var app = express();
-var port = 3000;
+var PORT = process.env.PORT || 3000;
 var SC_COLLECTION_TOKEN = process.env.SC_COLLECTION_TOKEN || undefined;
 
 app.use( bodyParser.json() );
@@ -47,6 +47,6 @@ app.post('/collection', function(req, res) {
   }
 });
 
-app.listen(port, function() {
-  console.log('[INFO] BGG App listening on port: ' + port + '.');
+app.listen(PORT, function() {
+  console.log('[INFO] BGG App listening on port: ' + PORT + '.');
 });
