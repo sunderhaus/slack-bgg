@@ -1,6 +1,5 @@
 function SlackRequest(body) {
   "use strict";
-  console.dir(body);
 
   this.token = body.token;
   this.teamId = body.team_id;
