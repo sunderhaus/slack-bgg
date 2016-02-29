@@ -14,7 +14,7 @@ module.exports = function formatCollectionForSlackResponse(collection) {
     index++;
   });
   data.attachments = { 
-    text: titles.join('\n')
+    text: titles.join('\n'),
     mrkdwn_in: ["text"]
   };
 
